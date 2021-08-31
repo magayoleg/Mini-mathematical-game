@@ -5,10 +5,4 @@ function userName() {
   console.log(`Hello, ${name}!`);
 }
 
-export {userName}
-
-
-
-
-
-
+export { userName };
