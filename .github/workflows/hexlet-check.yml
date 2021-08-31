@@ -11,7 +11,7 @@ name: hexlet-check
 on:
   push:
     branches:
-      - '**'
+      - main
     tags:
       - '**'
 
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
+      - run: make lint
       - name: Hexlet project check
         uses: hexlet/project-action@release
         with:
