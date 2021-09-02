@@ -1,15 +1,16 @@
+name: make-lint
+
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  - push
+  - pull_request
 
 jobs:
   build:
-    runs-on: windows-latest
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
+    runs-on: ubuntu-latest
     steps:
-
+      - uses: actions/checkout@v2
+      - name: Hexlet project check
+        uses: hexlet/project-action@release
+        with:
+          hexlet-id: ${{ secrets.HEXLET_ID }}
       - run: make lint
