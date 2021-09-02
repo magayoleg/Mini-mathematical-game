@@ -1,16 +1,17 @@
-name: make-lint
+name: linter
 
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - '**'
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Hexlet project check
-        uses: hexlet/project-action@release
+      - uses: actions/setup-node@v1
         with:
-          hexlet-id: ${{ secrets.HEXLET_ID }}
+          node-version: '14.x'
+      - run: make install
       - run: make lint
