@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 
 function mathExpression() {
   const arrayTest = [];
-  
+
   for (let i = 0; i < 3; i += 1) {
     const a = Math.round(Math.random() * 100);
     const b = Math.round(Math.random() * 10);
@@ -11,8 +11,8 @@ function mathExpression() {
     const arraySignString = [`${a} + ${b}`, `${a} - ${b}`, `${a} * ${b}`];
     const valueArray = [];
     const mathSign = Math.round(Math.random() * 2);
-    valueArray.push(arraySignString[mathSign], arraySign[mathSign])
-    arrayTest.push(valueArray)
+    valueArray.push(arraySignString[mathSign], arraySign[mathSign]);
+    arrayTest.push(valueArray);
   }
 
   return arrayTest;
