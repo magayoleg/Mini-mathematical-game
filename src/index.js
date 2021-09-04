@@ -1,6 +1,10 @@
 #!/usr/bin/env node
-import * as game from '../bin/brain-even.js';
+import * as games from '../bin/brain-games.js';
+import * as even from '../bin/brain-even.js';
 import * as calc from '../bin/brain-calc.js';
+import * as gcd from '../bin/brain-gcd.js';
 
-game.game();
+games.game();
+even.game();
 calc.game();
+gcd.game();

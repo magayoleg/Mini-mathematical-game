@@ -1,16 +1,16 @@
-#!/usr/bin/env node
+// #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
 function mathExpression() {
   const arrayTest = [];
 
-  for (let i = 0; i < 3; i += 1) {
-    const a = Math.round(Math.random() * 100);
-    const b = Math.round(Math.random() * 10);
+  for (let i = 1; i <= 3; i += 1) {
+    const a = Math.ceil(Math.random() * 100);
+    const b = Math.ceil(Math.random() * 10);
     const arraySign = [a + b, a - b, a * b];
     const arraySignString = [`${a} + ${b}`, `${a} - ${b}`, `${a} * ${b}`];
     const valueArray = [];
-    const mathSign = Math.round(Math.random() * 2);
+    const mathSign = Math.ceil(Math.random() * 2);
     valueArray.push(arraySignString[mathSign], arraySign[mathSign]);
     arrayTest.push(valueArray);
   }

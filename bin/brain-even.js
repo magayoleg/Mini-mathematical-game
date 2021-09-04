@@ -1,12 +1,11 @@
 #!/usr/bin/env node
-/* eslint-disable-next-line */
 import readlineSync from 'readline-sync';
 
 function randomNumber() {
   const array = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 1; i <= 3; i += 1) {
     const valueArray = [];
-    valueArray.push(Math.round(Math.random() * 100));
+    valueArray.push(Math.ceil(Math.random() * 100));
     if (valueArray[0] % 2) {
       valueArray.push('no');
     } else {

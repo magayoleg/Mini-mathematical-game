@@ -9,3 +9,6 @@ https://asciinema.org/a/rwlbvLQMWY5b9Yo19fq2FLVJ3
 
 ### brain-even & brain-calc games
 https://asciinema.org/a/BzRGli5vK44hSt03n8FpBIRVR
+
+### brain-gcd
+https://asciinema.org/a/9u0aEDY7uZR9HyUn77EQv0cHv
