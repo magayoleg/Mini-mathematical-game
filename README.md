@@ -4,5 +4,8 @@
 ### Maintainability 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
-### Asciinema
+### brain-even game
 https://asciinema.org/a/rwlbvLQMWY5b9Yo19fq2FLVJ3
+
+### brain-even & brain-calc games
+https://asciinema.org/a/BzRGli5vK44hSt03n8FpBIRVR
