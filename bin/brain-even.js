@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable-next-line */
 import readlineSync from 'readline-sync';
 
 function randomNumber() {
@@ -19,9 +20,10 @@ function randomNumber() {
 function game() {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const numbers = randomNumber();
-  for (const [number, answer] of numbers) {
+  /*eslint-disable */
+  for (const [number, answer] of numbers) { 
     console.log(`Question: ${number}`);
-    const question = readlineSync.question(`Your answer: `);
+    const question = readlineSync.question('Your answer: ');
     if (question === answer) {
       console.log('Correct!');
     } else {
@@ -29,6 +31,7 @@ function game() {
 Correct answer was 'no'. Let's try again, Bill!`);
     }
   }
+  /*eslint-disable */
   return console.log('Congratulations, Bill!');
 }
 export { game };
