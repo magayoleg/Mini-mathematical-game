@@ -16,7 +16,7 @@ function randomNumber() {
   return array;
 }
 
-function game() {
+function game(name) {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const numbers = randomNumber();
   /*eslint-disable */
@@ -31,7 +31,7 @@ Let's try again, Bill!`);
     }
   }
   /*eslint-disable */
-  return console.log('Congratulations, Bill!');
+  return console.log(`Congratulations, ${name}!`);
 }
 
 export { game };

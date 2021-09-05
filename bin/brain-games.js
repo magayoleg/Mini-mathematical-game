@@ -5,6 +5,6 @@ function game() {
   console.log('Welcome to the Brain Games!');
 }
 
-user.userName();
+const name = user.userName();
 
-export { game };
+export { game, name };
