@@ -26,7 +26,7 @@ function game() {
     if (question === answer) {
       console.log('Correct!');
     } else {
-      return console.log(`'yes' is wrong answer ;(. Correct answer was '${answer}'.
+      return console.log(`'${question}' is wrong answer ;(. Correct answer was '${answer}'.
 Let's try again, Bill!`);
     }
   }
