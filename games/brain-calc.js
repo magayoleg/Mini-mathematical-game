@@ -18,7 +18,7 @@ function mathExpression() {
   return arrayTest;
 }
 
-function game() {
+function game(name) {
   console.log('What is the result of the expression?');
   const numbers = mathExpression();
   /*eslint-disable */
@@ -28,12 +28,12 @@ function game() {
     if (question == answer) {
       console.log('Correct!');
     } else {
-      return console.log(`${question} is wrong answer ;(. Correct answer was ${answer}.
-      Let's try again, Sam!`);
+      return console.log(`'${question}' is wrong answer ;(. Correct answer was '${answer}'.
+      Let's try again, ${name}!`);
     }
   }
   /*eslint-disable */
-  return console.log('Congratulations, Bill!');
+  return console.log(`Congratulations, ${name}!`);
 }
 
 export { game }

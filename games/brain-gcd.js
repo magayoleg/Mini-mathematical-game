@@ -21,7 +21,7 @@ function maxDivider() {
   return arrayTest;
 }
 
-function game() {
+function game(name) {
   console.log('Find the greatest common divisor of given numbers.');
   const numbers = maxDivider();
   /*eslint-disable */
@@ -31,12 +31,12 @@ function game() {
     if (question == divider) {
       console.log('Correct!'); 
     } else {
-      return console.log(`${question} is wrong answer ;(. Correct answer was ${divider}.
-Let's try again, Sam!`);
+      return console.log(`'${question}' is wrong answer ;(. Correct answer was '${divider}'.
+Let's try again, ${name}!`);
     }
   }
   /*eslint-disable */
-  return console.log('Congratulations, Bill!');
+  return console.log(`Congratulations, ${name}!`);
 }
 game();
 export { game };

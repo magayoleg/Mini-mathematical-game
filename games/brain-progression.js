@@ -26,7 +26,7 @@ function progression() {
   return array;
 }
 
-function game() {
+function game(name) {
   console.log('What number is missing in the progression?');
   const numbers = progression();
   /*eslint-disable */
@@ -36,12 +36,12 @@ function game() {
     if (question == answer) {
       console.log('Correct!'); 
     } else {
-      return console.log(`${question} is wrong answer ;(. Correct answer was ${answer}.
-Let's try again, Sam!`);
+      return console.log(`'${question}' is wrong answer ;(. Correct answer was '${answer}'.
+Let's try again, ${name}!`);
     }
   }
   /*eslint-disable */
-  return console.log('Congratulations, Bill!');
+  return console.log(`Congratulations, ${name}!`);
 }
 
 export { game };

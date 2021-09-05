@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import * as games from './brain-games.js';
 import * as progression from '../games/brain-progression.js';
 
-progression.game();
+games.game();
+progression.game(games.name);

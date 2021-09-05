@@ -23,7 +23,7 @@ function primeNumber() {
   return arrayTest;
 }
 
-function game() {
+function game(name) {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   const numbers = primeNumber();
   /*eslint-disable */
@@ -33,12 +33,12 @@ function game() {
     if (question == answer) {
       console.log('Correct!');
     } else {
-      return console.log(`"${question}" is wrong answer ;(. Correct answer was "${answer}".
-Let's try again, Sam!`);
+      return console.log(`'${question}' is wrong answer ;(. Correct answer was '${answer}'.
+Let's try again, ${name}!`);
     }
   }
   /*eslint-disable */
-  return console.log('Congratulations, Bill!');
+  return console.log(`Congratulations, ${name}!`);
 }
 
 export { game }
