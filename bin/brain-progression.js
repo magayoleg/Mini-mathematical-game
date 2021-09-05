@@ -44,9 +44,4 @@ function game() {
   return console.log('Congratulations, Bill!');
 }
 
-<<<<<<< HEAD
-=======
-game();
-
->>>>>>> 4c7e9624d9d5eeb9c51df640800bc2e7cf524688
 export { game };
