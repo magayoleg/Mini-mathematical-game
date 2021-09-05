@@ -32,7 +32,7 @@ function game() {
       console.log('Correct!'); 
     } else {
       return console.log(`${question} is wrong answer ;(. Correct answer was ${divider}.
-      Let's try again, Sam!`);
+Let's try again, Sam!`);
     }
   }
   /*eslint-disable */

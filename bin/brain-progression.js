@@ -37,7 +37,7 @@ function game() {
       console.log('Correct!'); 
     } else {
       return console.log(`${question} is wrong answer ;(. Correct answer was ${answer}.
-      Let's try again, Sam!`);
+Let's try again, Sam!`);
     }
   }
   /*eslint-disable */

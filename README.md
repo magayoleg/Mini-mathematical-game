@@ -7,11 +7,14 @@
 ### brain-even game
 https://asciinema.org/a/rwlbvLQMWY5b9Yo19fq2FLVJ3
 
-### brain-even & brain-calc games
-https://asciinema.org/a/BzRGli5vK44hSt03n8FpBIRVR
+### brain-calc game
+https://asciinema.org/a/COTuWoo0JXWrOzK1aKUAmz7H4
 
-### brain-gcd
+### brain-gcd game
 https://asciinema.org/a/9u0aEDY7uZR9HyUn77EQv0cHv
 
-### brain-progression
+### brain-progression game
 https://asciinema.org/a/rAUwt4dwLjsWHNHhwjORc8hPi
+
+### brain-primeNumber game
+https://asciinema.org/a/cO3w1QiLq8DT2SE4JHaZ90Psd
