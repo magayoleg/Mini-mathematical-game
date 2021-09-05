@@ -38,5 +38,5 @@ Let's try again, ${name}!`);
   /*eslint-disable */
   return console.log(`Congratulations, ${name}!`);
 }
-game();
+
 export { game };
