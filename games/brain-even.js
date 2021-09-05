@@ -27,7 +27,7 @@ function game(name) {
       console.log('Correct!');
     } else {
       return console.log(`'${question}' is wrong answer ;(. Correct answer was '${answer}'.
-Let's try again, Bill!`);
+Let's try again, ${name}!`);
     }
   }
   /*eslint-disable */
