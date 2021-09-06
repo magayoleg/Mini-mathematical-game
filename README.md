@@ -2,7 +2,7 @@
 [![Actions Status](https://github.com/magayoleg/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/magayoleg/frontend-project-lvl1/actions)
 
 ### Maintainability 
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+<a href="https://codeclimate.com/github/magayoleg/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/87f77bf4b930317eb084/maintainability" /></a>
 
 ### brain-even game
 https://asciinema.org/a/YLbhkSfPBRzmadNOX7tbfK31s

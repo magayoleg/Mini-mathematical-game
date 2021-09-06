@@ -1,14 +1,19 @@
-#!/usr/bin/env node
-import * as games from '../bin/brain-games.js';
-import * as even from '../bin/brain-even.js';
-import * as calc from '../bin/brain-calc.js';
-import * as gcd from '../bin/brain-gcd.js';
-import * as progression from '../bin/brain-progression.js';
-import * as primeNumber from '../bin/brain-prime.js';
+import readlineSync from 'readline-sync';
 
-games.game();
-even.game();
-calc.game();
-gcd.game();
-progression.game();
-primeNumber.game();
+export default function gameEngine(name, massage, callback) {
+  console.log(massage);
+  /*eslint-disable */
+  for (const [number, answer] of callback) { 
+    console.log(`Question: ${number}`);
+    const question = readlineSync.question('Your answer: ');
+    if (question == answer) {
+      console.log('Correct!');
+    } else {
+      return console.log(`'${question}' is wrong answer ;(. Correct answer was '${answer}'.
+      Let's try again, ${name}!`);
+    }
+  }
+  /*eslint-disable */
+  return console.log(`Congratulations, ${name}!`);
+}
+

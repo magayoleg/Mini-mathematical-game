@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import * as games from './brain-games.js';
-import * as primeNumber from '../games/brain-prime.js';
+import primeNumber from '../src/games/brain-prime.js';
+import gameEngine from '../src/index.js';
 
 games.game();
-primeNumber.game(games.name);
+gameEngine(games.name, 'Answer "yes" if given number is prime. Otherwise answer "no".', primeNumber());
