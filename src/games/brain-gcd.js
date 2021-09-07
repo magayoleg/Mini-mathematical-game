@@ -1,4 +1,6 @@
-export default function maxDivider() {
+import gameEngine from '../index.js';
+
+function maxDivider() {
   const arrayTest = [];
 
   for (let i = 1; i <= 3; i += 1) {
@@ -9,7 +11,7 @@ export default function maxDivider() {
       const valueArray = [];
       if (firstNumber % j === 0 && secondNumber % j === 0) {
         const string = `${firstNumber} ${secondNumber}`;
-        valueArray.push(string, j);
+        valueArray.push(string, String(j));
         arrayTest.push(valueArray);
         break;
       }
@@ -17,4 +19,8 @@ export default function maxDivider() {
   }
 
   return arrayTest;
+}
+
+export default function startGameMaxDivider() {
+  gameEngine('Find the greatest common divisor of given numbers.', maxDivider());
 }

@@ -1,4 +1,6 @@
-export default function randomNumber() {
+import gameEngine from '../index.js';
+
+function randomNumber() {
   const array = [];
   for (let i = 1; i <= 3; i += 1) {
     const valueArray = [];
@@ -11,4 +13,8 @@ export default function randomNumber() {
     array.push(valueArray);
   }
   return array;
+}
+
+export default function startGameRandomNumber() {
+  gameEngine('Answer "yes" if the number is even, otherwise answer "no".', randomNumber());
 }

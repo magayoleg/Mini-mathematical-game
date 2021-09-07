@@ -1,4 +1,6 @@
-export default function primeNumber() {
+import gameEngine from '../index.js';
+
+function primeNumber() {
   const arrayTest = [];
 
   for (let i = 1; i <= 3; i += 1) {
@@ -18,4 +20,8 @@ export default function primeNumber() {
     arrayTest.push(valueArray);
   }
   return arrayTest;
+}
+
+export default function startGamePrimeNumber() {
+  gameEngine('Answer "yes" if given number is prime. Otherwise answer "no".', primeNumber());
 }
