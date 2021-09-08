@@ -1,30 +1,33 @@
-import gameEngine from '../index.js';
+import { gameEngine, numberRoundsGame } from '../index.js';
 
-function progression() {
-  const array = [];
-  for (let i = 1; i <= 3; i += 1) {
-    const valueArray = [];
-    let progress = '';
-    let number = Math.ceil(Math.random() * 10);
-    const iterationNumber = Math.ceil(Math.random() * 10);
-    const randomIndex = Math.ceil(Math.random() * 5);
-    progress += number;
-    for (let j = 1; j <= 5; j += 1) {
+function generatingRandomNumber(minNumber, maxNumber) {
+  const randomNumber = Math.random() * (maxNumber - minNumber + 1) + minNumber;
+  return Math.floor(randomNumber);
+}
+
+function generatingGameData() {
+  const arrayQuestionsAndAnswers = [];
+  for (let i = 0; i < numberRoundsGame; i += 1) {
+    let number = generatingRandomNumber(1, 10);
+    const iterationNumber = generatingRandomNumber(1, 10);
+    const randomIndex = generatingRandomNumber(1, 5);
+    let progress = String(number);
+    let answer = '';
+    for (let j = 0; j < 6; j += 1) {
       if (randomIndex === j) {
         number += iterationNumber;
-        valueArray.push(String(number));
+        answer = String(number);
         progress += ' ..';
       } else {
         number += iterationNumber;
         progress += ` ${number}`;
       }
     }
-    valueArray.unshift(progress);
-    array.push(valueArray);
+    arrayQuestionsAndAnswers.push([progress, answer]);
   }
-  return array;
+  return arrayQuestionsAndAnswers;
 }
 
-export default function startGameProgression() {
-  gameEngine('What number is missing in the progression?', progression());
+export default function startGeneratingGameData() {
+  gameEngine('What number is missing in the progression?', generatingGameData());
 }

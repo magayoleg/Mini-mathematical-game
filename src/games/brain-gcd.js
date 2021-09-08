@@ -1,26 +1,28 @@
-import gameEngine from '../index.js';
+import { gameEngine, numberRoundsGame } from '../index.js';
 
-function maxDivider() {
-  const arrayTest = [];
+function generatingRandomNumber(minNumber, maxNumber) {
+  const randomNumber = Math.random() * (maxNumber - minNumber + 1) + minNumber;
+  return Math.floor(randomNumber);
+}
 
-  for (let i = 1; i <= 3; i += 1) {
-    const firstNumber = Math.ceil(Math.random() * 50);
-    const secondNumber = Math.ceil(Math.random() * 40);
-    const minNumber = firstNumber < secondNumber ? firstNumber : secondNumber;
+function generatingGameData() {
+  const arrayQuestionsAndAnswers = [];
+
+  for (let i = 0; i < numberRoundsGame; i += 1) {
+    const number1 = generatingRandomNumber(1, 30);
+    const number2 = generatingRandomNumber(1, 10);
+    const minNumber = number1 < number2 ? number1 : number2;
     for (let j = minNumber; j > 0; j -= 1) {
-      const valueArray = [];
-      if (firstNumber % j === 0 && secondNumber % j === 0) {
-        const string = `${firstNumber} ${secondNumber}`;
-        valueArray.push(string, String(j));
-        arrayTest.push(valueArray);
+      if (number1 % j === 0 && number2 % j === 0) {
+        arrayQuestionsAndAnswers.push([`${number1} ${number2}`, String(j)]);
         break;
       }
     }
   }
 
-  return arrayTest;
+  return arrayQuestionsAndAnswers;
 }
 
-export default function startGameMaxDivider() {
-  gameEngine('Find the greatest common divisor of given numbers.', maxDivider());
+export default function startGeneratingGameData() {
+  gameEngine('Find the greatest common divisor of given numbers.', generatingGameData());
 }

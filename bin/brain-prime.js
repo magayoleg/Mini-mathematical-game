@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import startGamePrimeNumber from '../src/games/brain-prime.js';
+import startGeneratingGameData from '../src/games/brain-prime.js';
 
-startGamePrimeNumber();
+startGeneratingGameData();

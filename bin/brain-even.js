@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import startGameRandomNumber from '../src/games/brain-even.js';
+import startGeneratingGameData from '../src/games/brain-even.js';
 
-startGameRandomNumber();
+startGeneratingGameData();
