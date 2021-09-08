@@ -8,7 +8,7 @@ function generatingRandomNumber(minNumber, maxNumber) {
 function generatingGameData() {
   const arrayQuestionsAndAnswers = [];
   for (let i = 0; i < numberRoundsGame; i += 1) {
-    const number = generatingRandomNumber(8, 9);
+    const number = generatingRandomNumber(1, 100);
     if (number % 2) {
       arrayQuestionsAndAnswers.push([number, 'no']);
     } else {
