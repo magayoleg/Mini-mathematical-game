@@ -9,7 +9,7 @@ function generatingGameData() {
   const arrayQuestionsAndAnswers = [];
   for (let i = 0; i < numberRoundsGame; i += 1) {
     const number = generatingRandomNumber(1, 100);
-    if (number % 2) {
+    if (number % 2 !== 0) {
       arrayQuestionsAndAnswers.push([number, 'no']);
     } else {
       arrayQuestionsAndAnswers.push([number, 'yes']);
