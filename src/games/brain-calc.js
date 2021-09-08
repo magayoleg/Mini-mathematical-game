@@ -1,5 +1,4 @@
 /* eslint no-eval: 0 */
-
 import { gameEngine, numberRoundsGame } from '../index.js';
 
 function generatingRandomNumber(minNumber, maxNumber) {
@@ -14,7 +13,7 @@ function calculatesNumbers(number1, number2, randomSign) {
 
 function generatingGameData() {
   const arrayQuestionsAndAnswers = [];
-  for (let i = 0; i < numberRoundsGame; i += 1) {
+  for (let i = 0; i < 3; i += 1) {
     const number1 = generatingRandomNumber(1, 15);
     const number2 = generatingRandomNumber(1, 10);
     const arrayUsedSing = ['+', '-', '*'];
@@ -23,11 +22,13 @@ function generatingGameData() {
     const resultCalculation = calculatesNumbers(number1, number2, randomSign);
     const mathExpressionToString = `${number1} ${randomSign} ${number2}`;
 
-    arrayQuestionsAndAnswers.push([resultCalculation, mathExpressionToString]);
+    arrayQuestionsAndAnswers.push([mathExpressionToString, resultCalculation]);
   }
   return arrayQuestionsAndAnswers;
 }
-
+for (let i = 0; i < 50; i++) {
+  console.log(generatingGameData());
+}
 export default function startGeneratingGameData() {
   gameEngine('What is the result of the expression?', generatingGameData());
 }
