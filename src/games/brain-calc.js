@@ -13,7 +13,7 @@ function calculatesNumbers(number1, number2, randomSign) {
 
 function generatingGameData() {
   const arrayQuestionsAndAnswers = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < numberRoundsGame; i += 1) {
     const number1 = generatingRandomNumber(1, 15);
     const number2 = generatingRandomNumber(1, 10);
     const arrayUsedSing = ['+', '-', '*'];
@@ -26,9 +26,7 @@ function generatingGameData() {
   }
   return arrayQuestionsAndAnswers;
 }
-for (let i = 0; i < 50; i++) {
-  console.log(generatingGameData());
-}
+
 export default function startGeneratingGameData() {
   gameEngine('What is the result of the expression?', generatingGameData());
 }
