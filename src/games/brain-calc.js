@@ -22,7 +22,7 @@ function generatingGameData() {
     const resultCalculation = calculatesNumbers(number1, number2, randomSign);
     const mathExpressionToString = `${number1} ${randomSign} ${number2}`;
 
-    arrayQuestionsAndAnswers.push([mathExpressionToString, resultCalculation]);
+    arrayQuestionsAndAnswers.push([mathExpressionToString, String(resultCalculation)]);
   }
   return arrayQuestionsAndAnswers;
 }
