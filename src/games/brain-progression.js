@@ -1,33 +1,32 @@
-import { gameEngine, numberRoundsGame } from '../index.js';
+import index, { numberRoundsGame } from '../index.js';
+import generatNumber from '../generat-number.js';
 
-function generatingRandomNumber(minNumber, maxNumber) {
-  const randomNumber = Math.random() * (maxNumber - minNumber + 1) + minNumber;
-  return Math.floor(randomNumber);
-}
+const listNumbers = (start, iteration) => {
+  const numbers = [];
+  for (let i = 0; i < 6; i += 1) {
+    const number = i === 0 ? start : numbers[i - 1] + iteration;
+    numbers.push(number);
+  }
+  return numbers;
+};
 
 function generatingGameData() {
-  const arrayQuestionsAndAnswers = [];
+  const questionsAnswers = [];
   for (let i = 0; i < numberRoundsGame; i += 1) {
-    let number = generatingRandomNumber(1, 10);
-    const iterationNumber = generatingRandomNumber(1, 10);
-    const randomIndex = generatingRandomNumber(1, 5);
-    let progress = String(number);
-    let answer = '';
-    for (let j = 0; j < 6; j += 1) {
-      if (randomIndex === j) {
-        number += iterationNumber;
-        answer = String(number);
-        progress += ' ..';
-      } else {
-        number += iterationNumber;
-        progress += ` ${number}`;
-      }
-    }
-    arrayQuestionsAndAnswers.push([progress, answer]);
+    const number = generatNumber(1, 10);
+    const iterationNumber = generatNumber(1, 10);
+    const randomIndex = generatNumber(1, 5);
+    const numbers = listNumbers(number, iterationNumber);
+    const answer = numbers[randomIndex];
+    numbers[randomIndex] = ' ..';
+    const stringNumbers = numbers.join(' ');
+    questionsAnswers.push([stringNumbers, String(answer)]);
   }
-  return arrayQuestionsAndAnswers;
+  return questionsAnswers;
 }
 
+const regulationGame = 'What number is missing in the progression?';
+
 export default function startGeneratingGameData() {
-  gameEngine('What number is missing in the progression?', generatingGameData());
+  index(regulationGame, generatingGameData());
 }

@@ -1,32 +1,43 @@
 /* eslint no-eval: 0 */
-import { gameEngine, numberRoundsGame } from '../index.js';
+import index, { numberRoundsGame } from '../index.js';
+import generatNumber from '../generat-number.js';
 
-function generatingRandomNumber(minNumber, maxNumber) {
-  const randomNumber = Math.random() * (maxNumber - minNumber + 1) + minNumber;
-  return Math.floor(randomNumber);
-}
-
-function calculatesNumbers(number1, number2, randomSign) {
-  const result = eval(`${number1} ${randomSign} ${number2}`);
+function calculate(number1, number2, randomSign) {
+  let result = 0;
+  switch (randomSign) {
+    case '+':
+      result = number1 + number2;
+      break;
+    case '-':
+      result = number1 - number2;
+      break;
+    case '*':
+      result = number1 * number2;
+      break;
+    default:
+      break;
+  }
   return result;
 }
 
 function generatingGameData() {
-  const arrayQuestionsAndAnswers = [];
+  const questionsAnswers = [];
   for (let i = 0; i < numberRoundsGame; i += 1) {
-    const number1 = generatingRandomNumber(1, 15);
-    const number2 = generatingRandomNumber(1, 10);
-    const arrayUsedSing = ['+', '-', '*'];
-    const indexRandomSign = Math.floor(Math.random() * arrayUsedSing.length);
-    const randomSign = arrayUsedSing[indexRandomSign];
-    const resultCalculation = calculatesNumbers(number1, number2, randomSign);
+    const number1 = generatNumber(1, 15);
+    const number2 = generatNumber(1, 10);
+    const operation = ['+', '-', '*'];
+    const indexRandomSign = Math.floor(Math.random() * operation.length);
+    const randomSign = operation[indexRandomSign];
+    const resultCalculation = calculate(number1, number2, randomSign);
     const mathExpressionToString = `${number1} ${randomSign} ${number2}`;
 
-    arrayQuestionsAndAnswers.push([mathExpressionToString, String(resultCalculation)]);
+    questionsAnswers.push([mathExpressionToString, String(resultCalculation)]);
   }
-  return arrayQuestionsAndAnswers;
+  return questionsAnswers;
 }
 
+const regulationGame = 'What is the result of the expression?';
+
 export default function startGeneratingGameData() {
-  gameEngine('What is the result of the expression?', generatingGameData());
+  index(regulationGame, generatingGameData());
 }

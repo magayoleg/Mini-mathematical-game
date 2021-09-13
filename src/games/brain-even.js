@@ -1,23 +1,20 @@
-import { gameEngine, numberRoundsGame } from '../index.js';
-
-function generatingRandomNumber(minNumber, maxNumber) {
-  const randomNumber = Math.random() * (maxNumber - minNumber + 1) + minNumber;
-  return Math.floor(randomNumber);
-}
+import index, { numberRoundsGame } from '../index.js';
+import generatNumber from '../generat-number.js';
 
 function generatingGameData() {
-  const arrayQuestionsAndAnswers = [];
+  const questionsAnswers = [];
+  const isEven = (number) => (!(number % 2));
+
   for (let i = 0; i < numberRoundsGame; i += 1) {
-    const number = generatingRandomNumber(1, 100);
-    if (number % 2 === 0) {
-      arrayQuestionsAndAnswers.push([number, 'yes']);
-    } else {
-      arrayQuestionsAndAnswers.push([number, 'no']);
-    }
+    const number = generatNumber(1, 100);
+    const verify = isEven(number) ? 'yes' : 'no';
+    questionsAnswers.push([number, verify]);
   }
-  return arrayQuestionsAndAnswers;
+  return questionsAnswers;
 }
 
+const regulationGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 export default function startGeneratingGameData() {
-  gameEngine('Answer "yes" if the number is even, otherwise answer "no".', generatingGameData());
+  index(regulationGame, generatingGameData());
 }
