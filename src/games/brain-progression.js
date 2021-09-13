@@ -18,7 +18,7 @@ function generatingGameData() {
     const randomIndex = generatNumber(1, 9);
     const numbers = listNumbers(number, iterationNumber);
     const answer = numbers[randomIndex];
-    numbers[randomIndex] = ' ..';
+    numbers[randomIndex] = '..';
     const stringNumbers = numbers.join(' ');
     questionsAnswers.push([stringNumbers, String(answer)]);
   }
