@@ -1,5 +1,6 @@
-import index, { numberRoundsGame } from '../index.js';
+import index from '../index.js';
 import generateNumber from '../generate-number.js';
+import generateGameData from '../generate-game.js';
 
 const regulationGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -14,14 +15,6 @@ function generatePrime() {
   return [number1, verify];
 }
 
-function generateGameData() {
-  const rounds = [];
-  for (let i = 0; i < numberRoundsGame; i += 1) {
-    rounds.push(generatePrime());
-  }
-  return rounds;
-}
-
 export default () => {
-  index(regulationGame, generateGameData());
+  index(regulationGame, generateGameData(generatePrime));
 };

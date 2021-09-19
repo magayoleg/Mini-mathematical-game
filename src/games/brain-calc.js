@@ -1,6 +1,7 @@
 /* eslint no-eval: 0 */
-import index, { numberRoundsGame } from '../index.js';
+import index from '../index.js';
 import generateNumber from '../generate-number.js';
+import generateGameData from '../generate-game.js';
 
 const regulationGame = 'What is the result of the expression?';
 
@@ -28,14 +29,6 @@ function oneRound() {
   return [question, String(answer)];
 }
 
-function generateGameData() {
-  const rounds = [];
-  for (let i = 0; i < numberRoundsGame; i += 1) {
-    rounds.push(oneRound());
-  }
-  return rounds;
-}
-
 export default () => {
-  index(regulationGame, generateGameData());
+  index(regulationGame, generateGameData(oneRound));
 };
