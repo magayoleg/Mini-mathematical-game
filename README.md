@@ -2,7 +2,8 @@
 [![Actions Status](https://github.com/magayoleg/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/magayoleg/frontend-project-lvl1/actions)
 
 ### Lint status:
-[![Actions Status](https://github.com/magayoleg/frontend-project-lvl1/.github/workflows/lint.yml/badge.svg)](https://github.com/magayoleg/frontend-project-lvl1/)actions)
+[![Actions Status](https://github.com/magayoleg/frontend-project-lvl1/.github/workflows/lint.yml/badge.svg)](https://github.com/magayoleg/frontend-project-lvl1/)
+
 ### Maintainability 
 <a href="https://codeclimate.com/github/magayoleg/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/87f77bf4b930317eb084/maintainability" /></a>
 
