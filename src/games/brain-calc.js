@@ -1,43 +1,41 @@
 /* eslint no-eval: 0 */
 import index, { numberRoundsGame } from '../index.js';
-import generatNumber from '../generat-number.js';
-
-function calculate(number1, number2, randomSign) {
-  let result = 0;
-  switch (randomSign) {
-    case '+':
-      result = number1 + number2;
-      break;
-    case '-':
-      result = number1 - number2;
-      break;
-    case '*':
-      result = number1 * number2;
-      break;
-    default:
-      break;
-  }
-  return result;
-}
-
-function generatingGameData() {
-  const questionsAnswers = [];
-  for (let i = 0; i < numberRoundsGame; i += 1) {
-    const number1 = generatNumber(1, 15);
-    const number2 = generatNumber(1, 10);
-    const operation = ['+', '-', '*'];
-    const indexRandomSign = Math.floor(Math.random() * operation.length);
-    const randomSign = operation[indexRandomSign];
-    const resultCalculation = calculate(number1, number2, randomSign);
-    const mathExpressionToString = `${number1} ${randomSign} ${number2}`;
-
-    questionsAnswers.push([mathExpressionToString, String(resultCalculation)]);
-  }
-  return questionsAnswers;
-}
+import generateNumber from '../generate-number.js';
 
 const regulationGame = 'What is the result of the expression?';
 
-export default function startGeneratingGameData() {
-  index(regulationGame, generatingGameData());
+function calculate(number1, number2, operation) {
+  switch (operation) {
+    case '+':
+      return number1 + number2;
+    case '-':
+      return number1 - number2;
+    case '*':
+      return number1 * number2;
+    default:
+      throw new Error(`Operation ${operation} is not supported`);
+  }
 }
+
+function oneRound() {
+  const number1 = generateNumber(1, 15);
+  const number2 = generateNumber(1, 10);
+  const operation = ['+', '-', '*'];
+  const indexOperation = Math.floor(Math.random() * operation.length);
+  const randomOperation = operation[indexOperation];
+  const answer = calculate(number1, number2, randomOperation);
+  const question = `${number1} ${randomOperation} ${number2}`;
+  return [question, String(answer)];
+}
+
+function generateGameData() {
+  const rounds = [];
+  for (let i = 0; i < numberRoundsGame; i += 1) {
+    rounds.push(oneRound());
+  }
+  return rounds;
+}
+
+export default () => {
+  index(regulationGame, generateGameData());
+};
