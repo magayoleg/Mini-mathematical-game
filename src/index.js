@@ -6,7 +6,7 @@ export { numberRoundsGame };
 
 export default (massage, results) => {
   console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name?');
+  const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(massage);
   // eslint-disable-next-line no-restricted-syntax
@@ -18,7 +18,7 @@ export default (massage, results) => {
       console.log(`Let's try again, ${name}!`);
       return;
     }
+    console.log('Correct!');
   }
-  console.log('Correct!');
   console.log(`Congratulations, ${name}!`);
 };

@@ -13,21 +13,24 @@
 Для успешного прохождения игры, необходимо корректно ответить на все 3 вопроса.
 
 Для установки необходимо использовать команду в терминале: git clone https://github.com/magayoleg/frontend-project-lvl1.git
-Для запуска игр использовать команды в терминале: brain-calc, brain-even, brain-gcd, brain-prime, brain-progression.
-
-### brain-even game
-https://asciinema.org/a/YLbhkSfPBRzmadNOX7tbfK31s
+Для запуска игр использовать команды в терминале: brain-calc, brain-even, brain-gcd, brain-prime, brain-progression.\
 
 ### brain-calc game
 https://asciinema.org/a/ySCtmK1Enci1catoQQxVN65f6
+[![asciicast](https://asciinema.org/a/ySCtmK1Enci1catoQQxVN65f6.svg)](https://asciinema.org/a/ySCtmK1Enci1catoQQxVN65f6)
+
+### brain-even game
+https://asciinema.org/a/YLbhkSfPBRzmadNOX7tbfK31s
+[![asciicast](https://asciinema.org/a/YLbhkSfPBRzmadNOX7tbfK31s.svg)](https://asciinema.org/a/YLbhkSfPBRzmadNOX7tbfK31s)
 
 ### brain-gcd game
 https://asciinema.org/a/u49A2L4rayQw2cDGB0qqzbce2
-
-### brain-progression game
-https://asciinema.org/a/G275GMyXbR3KojjfPb4pETyRp
+[![asciicast](https://asciinema.org/a/u49A2L4rayQw2cDGB0qqzbce2.svg)](https://asciinema.org/a/u49A2L4rayQw2cDGB0qqzbce2)
 
 ### brain-prime game
 https://asciinema.org/a/Ifjl682sfqaIQgrlhrQtJqSg9
+[![asciicast](https://asciinema.org/a/Ifjl682sfqaIQgrlhrQtJqSg9.svg)](https://asciinema.org/a/Ifjl682sfqaIQgrlhrQtJqSg9)
 
-
+### brain-progression game
+https://asciinema.org/a/G275GMyXbR3KojjfPb4pETyRp
+[![asciicast](https://asciinema.org/a/G275GMyXbR3KojjfPb4pETyRp.svg)](https://asciinema.org/a/G275GMyXbR3KojjfPb4pETyRp)
