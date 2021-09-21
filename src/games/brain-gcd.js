@@ -16,8 +16,8 @@ function generateGameData() {
   for (let i = 0; i < numberRoundsGame; i += 1) {
     const firstNumber = generateNumber(4, 30);
     const secondNumber = generateNumber(4, 30);
-    const GCD = greatestCommonDivisor(firstNumber, secondNumber)
-    rounds.push([`${firstNumber} ${secondNumber}`, String(GCD)])
+    const GCD = greatestCommonDivisor(firstNumber, secondNumber);
+    rounds.push([`${firstNumber} ${secondNumber}`, String(GCD)]);
   }
 
   return rounds;
