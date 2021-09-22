@@ -1,5 +1,6 @@
-import index, { numberRoundsGame } from '../index.js';
+import index from '../index.js';
 import generateNumber from '../generate-number.js';
+import generateGameData from '../generate-game.js';
 
 const regulationGame = 'What number is missing in the progression?';
 const progressionLength = 10;
@@ -20,20 +21,16 @@ function progressionToString(numbers, step) {
   return stringNumbers;
 }
 
-function generateGameData() {
-  const rounds = [];
-  for (let i = 0; i < numberRoundsGame; i += 1) {
-    const firstNumber = generateNumber(1, 10);
-    const step = generateNumber(1, 10);
-    const randomIndex = generateNumber(1, 9);
-    const numbers = generateProgression(firstNumber, step);
-    const answer = String(numbers[randomIndex]);
-    const stringNumbers = progressionToString(numbers, randomIndex);
-    rounds.push([stringNumbers, answer]);
-  }
-  return rounds;
+function oneRound() {
+  const firstNumber = generateNumber(1, 10);
+  const step = generateNumber(1, 10);
+  const randomIndex = generateNumber(1, 9);
+  const numbers = generateProgression(firstNumber, step);
+  const answer = String(numbers[randomIndex]);
+  const stringNumbers = progressionToString(numbers, randomIndex);
+  return [stringNumbers, answer];
 }
 
 export default () => {
-  index(regulationGame, generateGameData());
+  index(regulationGame, generateGameData(oneRound));
 };

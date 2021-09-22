@@ -1,5 +1,6 @@
-import index, { numberRoundsGame } from '../index.js';
+import index from '../index.js';
 import generateNumber from '../generate-number.js';
+import generateGameData from '../generate-game.js';
 
 const regulationGame = 'Find the greatest common divisor of given numbers.';
 
@@ -10,19 +11,13 @@ function greatestCommonDivisor(number1, number2) {
   return r === 0 ? minNumber : greatestCommonDivisor(minNumber, r);
 }
 
-function generateGameData() {
-  const rounds = [];
-
-  for (let i = 0; i < numberRoundsGame; i += 1) {
-    const firstNumber = generateNumber(4, 30);
-    const secondNumber = generateNumber(4, 30);
-    const GCD = greatestCommonDivisor(firstNumber, secondNumber);
-    rounds.push([`${firstNumber} ${secondNumber}`, String(GCD)]);
-  }
-
-  return rounds;
+function oneRound() {
+  const firstNumber = generateNumber(4, 30);
+  const secondNumber = generateNumber(4, 30);
+  const GCD = greatestCommonDivisor(firstNumber, secondNumber);
+  return [`${firstNumber} ${secondNumber}`, String(GCD)];
 }
 
 export default () => {
-  index(regulationGame, generateGameData());
+  index(regulationGame, generateGameData(oneRound));
 };
