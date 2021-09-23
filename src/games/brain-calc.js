@@ -26,7 +26,8 @@ function oneRound() {
   const randomOperation = operation[indexOperation];
   const answer = calculate(number1, number2, randomOperation);
   const question = `${number1} ${randomOperation} ${number2}`;
-  return [question, String(answer)];
+  const questionAnswer = [question, String(answer)];
+  return questionAnswer;
 }
 
 export default () => {

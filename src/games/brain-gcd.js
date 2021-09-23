@@ -15,7 +15,8 @@ function oneRound() {
   const firstNumber = generateNumber(4, 30);
   const secondNumber = generateNumber(4, 30);
   const GCD = greatestCommonDivisor(firstNumber, secondNumber);
-  return [`${firstNumber} ${secondNumber}`, String(GCD)];
+  const questionAnswer = [`${firstNumber} ${secondNumber}`, String(GCD)];
+  return questionAnswer;
 }
 
 export default () => {

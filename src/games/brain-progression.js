@@ -6,12 +6,12 @@ const regulationGame = 'What number is missing in the progression?';
 const progressionLength = 10;
 
 function generateProgression(start, step) {
-  const numbers = [];
+  const progression = [];
   for (let i = 0; i < progressionLength; i += 1) {
-    const number = i === 0 ? start : numbers[i - 1] + step;
-    numbers.push(number);
+    const number = i === 0 ? start : progression[i - 1] + step;
+    progression.push(number);
   }
-  return numbers;
+  return progression;
 }
 
 function progressionToString(numbers, step) {
@@ -28,7 +28,8 @@ function oneRound() {
   const numbers = generateProgression(firstNumber, step);
   const answer = String(numbers[randomIndex]);
   const stringNumbers = progressionToString(numbers, randomIndex);
-  return [stringNumbers, answer];
+  const questionAnswer = [stringNumbers, answer];
+  return questionAnswer;
 }
 
 export default () => {

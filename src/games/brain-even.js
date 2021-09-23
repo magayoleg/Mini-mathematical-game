@@ -8,7 +8,8 @@ const isEven = (number) => (!(number % 2));
 function oneRound() {
   const number = generateNumber(1, 100);
   const verify = isEven(number) ? 'yes' : 'no';
-  return [number, verify];
+  const questionAnswer = [number, verify];
+  return questionAnswer;
 }
 
 export default () => {
